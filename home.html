@@ -1,0 +1,396 @@
+<div class="test">
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="home">
+<div class="forms">
+    <form class="row g-3" method="post">
+        <div class="col-md-3">
+            <select class="form-select form-premdark" aria-label="Default select example" id="clubOne" name="clubOne" required>
+                <option selected disabled value="">Team One</option>
+                <option value={{ id1 }}>{{ name1 }}</option>
+                <option value={{ id2 }}>{{ name2 }}</option>
+                <option value={{ id3 }}>{{ name3 }}</option>
+                <option value={{ id4 }}>{{ name4 }}</option>
+                <option value={{ id5 }}>{{ name5 }}</option>
+                <option value={{ id6 }}>{{ name6 }}</option>
+                <option value={{ id7 }}>{{ name7 }}</option>
+                <option value={{ id8 }}>{{ name8 }}</option>
+                <option value={{ id9 }}>{{ name9 }}</option>
+                <option value={{ id10 }}>{{ name10 }}</option>
+                <option value={{ id11 }}>{{ name11 }}</option>
+                <option value={{ id12 }}>{{ name12 }}</option>
+                <option value={{ id13 }}>{{ name13 }}</option>
+                <option value={{ id14 }}>{{ name14 }}</option>
+                <option value={{ id15 }}>{{ name15 }}</option>
+                <option value={{ id16 }}>{{ name16 }}</option>
+                <option value={{ id17 }}>{{ name17 }}</option>
+                <option value={{ id18 }}>{{ name18 }}</option>
+                <option value={{ id19 }}>{{ name19 }}</option>
+                <option value={{ id20 }}>{{ name20 }}</option>
+            </select>
+            <div class="valid-feedback">
+                great choice! :)
+            </div>
+            <div class="invalid-feedback">
+                please choose a club. :/
+            </div>
+        </div>
+        <div class="col-md-3">
+            versus
+        </div>
+        <div class="col-md-3">
+            <select class="form-select form-premdark" id="clubTwo" name="clubTwo" required>
+                <option selected disabled value="">Team Two</option>
+                <option value={{ id1 }}>{{ name1 }}</option>
+                <option value={{ id2 }}>{{ name2 }}</option>
+                <option value={{ id3 }}>{{ name3 }}</option>
+                <option value={{ id4 }}>{{ name4 }}</option>
+                <option value={{ id5 }}>{{ name5 }}</option>
+                <option value={{ id6 }}>{{ name6 }}</option>
+                <option value={{ id7 }}>{{ name7 }}</option>
+                <option value={{ id8 }}>{{ name8 }}</option>
+                <option value={{ id9 }}>{{ name9 }}</option>
+                <option value={{ id10 }}>{{ name10 }}</option>
+                <option value={{ id11 }}>{{ name11 }}</option>
+                <option value={{ id12 }}>{{ name12 }}</option>
+                <option value={{ id13 }}>{{ name13 }}</option>
+                <option value={{ id14 }}>{{ name14 }}</option>
+                <option value={{ id15 }}>{{ name15 }}</option>
+                <option value={{ id16 }}>{{ name16 }}</option>
+                <option value={{ id17 }}>{{ name17 }}</option>
+                <option value={{ id18 }}>{{ name18 }}</option>
+                <option value={{ id19 }}>{{ name19 }}</option>
+                <option value={{ id20 }}>{{ name20 }}</option>
+            </select>
+            <div class="valid-feedback">
+                great choice! :)
+            </div>
+            <div class="invalid-feedback">
+                please choose a club. :/
+            </div>
+        </div>
+    <button class="btn btn-outline-success btn-premdark col-md-3" type="submit" id="liveAlertBtn">Load Data Pack!</button>
+    </form>
+
+    <script>
+        (function () {
+            var forms = document.querySelectorAll('.needs-validation')
+
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</div>
+    <br>
+    <table class="table table-premdark">
+        <div class="data">
+        <h6>
+            <thead><tr><th title="Field #1">Position</th>
+                <th title="Image">Badge</th>
+                <th title="Field #2">Club</th>
+                <th title="Field #3">Played</th>
+                <th title="Field #4">Won</th>
+                <th title="Field #5">Drawn</th>
+                <th title="Field #6">Lost</th>
+                <th title="Field #7">GF</th>
+                <th title="Field #8">GA</th>
+                <th title="Field #9">Points</th>
+                <th title="Field 10">Form</th>
+                <th title="Field 11">Next</th>
+            </tr></thead>
+            <tbody><tr>
+                <td>1</td>
+                <td><img src={{ img1 }} width="50"></td>
+                <td>{{ name1 }}</td>
+                <td>{{ pg1 }}</td>
+                <td>{{ wins1 }}</td>
+                <td>{{ draws1 }}</td>
+                <td>{{ losses1 }}</td>
+                <td>{{ gf1 }}</td>
+                <td>{{ ga1 }}</td>
+                <td>{{ points1 }}</td>
+                <td>{{ form1 }}</td>
+                <td><a href="/next1"><img src={{ nextclub1 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>2</td>
+                <td><img src={{ img2 }} width="50"></td>
+                <td>{{ name2 }}</td>
+                <td>{{ pg2 }}</td>
+                <td>{{ wins2 }}</td>
+                <td>{{ draws2 }}</td>
+                <td>{{ losses2 }}</td>
+                <td>{{ gf2 }}</td>
+                <td>{{ ga2 }}</td>
+                <td>{{ points2 }}</td>
+                <td>{{ form2 }}</td>
+                <td><a href="/next2"><img src={{ nextclub2 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>3</td>
+                <td><img src={{ img3 }} width="50"></td>
+                <td>{{ name3 }}</td>
+                <td>{{ pg3 }}</td>
+                <td>{{ wins3 }}</td>
+                <td>{{ draws3 }}</td>
+                <td>{{ losses3 }}</td>
+                <td>{{ gf3 }}</td>
+                <td>{{ ga3 }}</td>
+                <td>{{ points3 }}</td>
+                <td>{{ form3 }}</td>
+                <td><a href="/next3"><img src={{ nextclub3 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>4</td>
+                <td><img src={{ img4 }} width="50"></td>
+                <td>{{ name4 }}</td>
+                <td>{{ pg4 }}</td>
+                <td>{{ wins4 }}</td>
+                <td>{{ draws4 }}</td>
+                <td>{{ losses4 }}</td>
+                <td>{{ gf4 }}</td>
+                <td>{{ ga4 }}</td>
+                <td>{{ points4 }}</td>
+                <td>{{ form4 }}</td>
+                <td><a href="/next4"><img src={{ nextclub4 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>5</td>
+                <td><img src={{ img5 }} width="50"></td>
+                <td>{{ name5 }}</td>
+                <td>{{ pg5 }}</td>
+                <td>{{ wins5 }}</td>
+                <td>{{ draws5 }}</td>
+                <td>{{ losses5 }}</td>
+                <td>{{ gf5 }}</td>
+                <td>{{ ga5 }}</td>
+                <td>{{ points5 }}</td>
+                <td>{{ form5 }}</td>
+                <td><a href="/next5"><img src={{ nextclub5 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>6</td>
+                <td><img src={{ img6 }} width="50"></td>
+                <td>{{ name6 }}</td>
+                <td>{{ pg6 }}</td>
+                <td>{{ wins6 }}</td>
+                <td>{{ draws6 }}</td>
+                <td>{{ losses6 }}</td>
+                <td>{{ gf6 }}</td>
+                <td>{{ ga6 }}</td>
+                <td>{{ points6 }}</td>
+                <td>{{ form6 }}</td>
+                <td><a href="/next6"><img src={{ nextclub6 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>7</td>
+                <td><img src={{ img7 }} width="50"></td>
+                <td>{{ name7 }}</td>
+                <td>{{ pg7 }}</td>
+                <td>{{ wins7 }}</td>
+                <td>{{ draws7 }}</td>
+                <td>{{ losses7 }}</td>
+                <td>{{ gf7 }}</td>
+                <td>{{ ga7 }}</td>
+                <td>{{ points7 }}</td>
+                <td>{{ form7 }}</td>
+                <td><a href="/next7"><img src={{ nextclub7 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>8</td>
+                <td><img src={{ img8 }} width="50"></td>
+                <td>{{ name8 }}</td>
+                <td>{{ pg8 }}</td>
+                <td>{{ wins8 }}</td>
+                <td>{{ draws8 }}</td>
+                <td>{{ losses8 }}</td>
+                <td>{{ gf8 }}</td>
+                <td>{{ ga8 }}</td>
+                <td>{{ points8 }}</td>
+                <td>{{ form8 }}</td>
+                <td><a href="/next8"><img src={{ nextclub8 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>9</td>
+                <td><img src={{ img9 }} width="50"></td>
+                <td>{{ name9 }}</td>
+                <td>{{ pg9 }}</td>
+                <td>{{ wins9 }}</td>
+                <td>{{ draws9 }}</td>
+                <td>{{ losses9 }}</td>
+                <td>{{ gf9 }}</td>
+                <td>{{ ga9 }}</td>
+                <td>{{ points9 }}</td>
+                <td>{{ form9 }}</td>
+                <td><a href="/next9"><img src={{ nextclub9 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>10</td>
+                <td><img src={{ img10 }} width="50"></td>
+                <td>{{ name10 }}</td>
+                <td>{{ pg10 }}</td>
+                <td>{{ wins10 }}</td>
+                <td>{{ draws10 }}</td>
+                <td>{{ losses10 }}</td>
+                <td>{{ gf10 }}</td>
+                <td>{{ ga10 }}</td>
+                <td>{{ points10 }}</td>
+                <td>{{ form10 }}</td>
+                <td><a href="/next10"><img src={{ nextclub10 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>11</td>
+                <td><img src={{ img11 }} width="50"></td>
+                <td>{{ name11 }}</td>
+                <td>{{ pg11 }}</td>
+                <td>{{ wins11 }}</td>
+                <td>{{ draws11 }}</td>
+                <td>{{ losses11 }}</td>
+                <td>{{ gf11 }}</td>
+                <td>{{ ga11 }}</td>
+                <td>{{ points11 }}</td>
+                <td>{{ form11 }}</td>
+                <td><a href="/next11"><img src={{ nextclub11 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>12</td>
+                <td><img src={{ img12 }} width="50"></td>
+                <td>{{ name12 }}</td>
+                <td>{{ pg12 }}</td>
+                <td>{{ wins12 }}</td>
+                <td>{{ draws12 }}</td>
+                <td>{{ losses12 }}</td>
+                <td>{{ gf12 }}</td>
+                <td>{{ ga12 }}</td>
+                <td>{{ points12 }}</td>
+                <td>{{ form12 }}</td>
+                <td><a href="/next12"><img src={{ nextclub12 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>13</td>
+                <td><img src={{ img13 }} width="50"></td>
+                <td>{{ name13 }}</td>
+                <td>{{ pg13 }}</td>
+                <td>{{ wins13 }}</td>
+                <td>{{ draws13 }}</td>
+                <td>{{ losses13 }}</td>
+                <td>{{ gf13 }}</td>
+                <td>{{ ga13 }}</td>
+                <td>{{ points13 }}</td>
+                <td>{{ form13 }}</td>
+                <td><a href="/next13"><img src={{ nextclub13 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>14</td>
+                <td><img src={{ img14 }} width="50"></td>
+                <td>{{ name14 }}</td>
+                <td>{{ pg14 }}</td>
+                <td>{{ wins14 }}</td>
+                <td>{{ draws14 }}</td>
+                <td>{{ losses14 }}</td>
+                <td>{{ gf14 }}</td>
+                <td>{{ ga14 }}</td>
+                <td>{{ points14 }}</td>
+                <td>{{ form14 }}</td>
+                <td><a href="/next14"><img src={{ nextclub14 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>15</td>
+                <td><img src={{ img15 }} width="50"></td>
+                <td>{{ name15 }}</td>
+                <td>{{ pg15 }}</td>
+                <td>{{ wins15 }}</td>
+                <td>{{ draws15 }}</td>
+                <td>{{ losses15 }}</td>
+                <td>{{ gf15 }}</td>
+                <td>{{ ga15 }}</td>
+                <td>{{ points15 }}</td>
+                <td>{{ form15 }}</td>
+                <td><a href="/next15"><img src={{ nextclub15 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>16</td>
+                <td><img src={{ img16 }} width="50"></td>
+                <td>{{ name16 }}</td>
+                <td>{{ pg16 }}</td>
+                <td>{{ wins16 }}</td>
+                <td>{{ draws16 }}</td>
+                <td>{{ losses16 }}</td>
+                <td>{{ gf16 }}</td>
+                <td>{{ ga16 }}</td>
+                <td>{{ points16 }}</td>
+                <td>{{ form16 }}</td>
+                <td><a href="/next16"><img src={{ nextclub16 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>17</td>
+                <td><img src={{ img17 }} width="50"></td>
+                <td>{{ name17 }}</td>
+                <td>{{ pg17 }}</td>
+                <td>{{ wins17 }}</td>
+                <td>{{ draws17 }}</td>
+                <td>{{ losses17 }}</td>
+                <td>{{ gf17 }}</td>
+                <td>{{ ga17 }}</td>
+                <td>{{ points17 }}</td>
+                <td>{{ form17 }}</td>
+                <td><a href="/next17"><img src={{ nextclub17 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>18</td>
+                <td><img src={{ img18 }} width="50"></td>
+                <td>{{ name18 }}</td>
+                <td>{{ pg18 }}</td>
+                <td>{{ wins18 }}</td>
+                <td>{{ draws18 }}</td>
+                <td>{{ losses18 }}</td>
+                <td>{{ gf18 }}</td>
+                <td>{{ ga18 }}</td>
+                <td>{{ points18 }}</td>
+                <td>{{ form18 }}</td>
+                <td><a href="/next18"><img src={{ nextclub18 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>19</td>
+                <td><img src={{ img19 }} width="50"></td>
+                <td>{{ name19 }}</td>
+                <td>{{ pg19 }}</td>
+                <td>{{ wins19 }}</td>
+                <td>{{ draws19 }}</td>
+                <td>{{ losses19 }}</td>
+                <td>{{ gf19 }}</td>
+                <td>{{ ga19 }}</td>
+                <td>{{ points19 }}</td>
+                <td>{{ form19 }}</td>
+                <td><a href="/next19"><img src={{ nextclub19 }} width="50"></td></a>
+            </tr></tbody>
+            <tbody><tr>
+                <td>20</td>
+                <td><img src={{ img20 }} width="50"></td>
+                <td>{{ name20 }}</td>
+                <td>{{ pg20 }}</td>
+                <td>{{ wins20 }}</td>
+                <td>{{ draws20 }}</td>
+                <td>{{ losses20 }}</td>
+                <td>{{ gf20 }}</td>
+                <td>{{ ga20 }}</td>
+                <td>{{ points20 }}</td>
+                <td>{{ form20 }}</td>
+                <td><a href="/next20"><img src={{ nextclub20 }} width="50"></td></a>
+            </h6>
+            </div>
+            </tr></tbody>
+        </table>
+</div>
+{% endblock %}
+</div>

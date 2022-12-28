@@ -1,0 +1,98 @@
+.section-one {
+    font-size: 45px;
+    text-align: center;
+    float: center;
+    color: #FFFFFF;
+}
+
+.first-meeting {
+    color: #FFFFFF;
+    font-size: 22px;
+    float: left;
+}
+
+.second-meeting {
+    color: #FFFFFF;
+    font-size: 22px;
+    float: right;
+}
+
+.stageTwo {
+    color: #FFFFFF;
+    font-size: 25px;
+    line-height: 2.5;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: "Light";
+    margin-bottom: 200px;
+    vertical-align: bottom;
+    height: 350px;
+    display: table-cell;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: "Bold";
+    font-size: 35px;
+    margin-bottom: 200px;
+    vertical-align: bottom;
+    height: 350px;
+    display: table-cell;
+    float: center;
+    text-align: center;
+}
+
+.forms {
+    background-color: #3B003E;
+}
+
+.table-premdark {
+    color: #FFFFFF;
+    background-color: #35013A;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: "Bold";
+}
+
+.form-premdark {
+    color: #FFFFFF;
+    background-color: #35013A;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: "Bold";
+}
+
+.col-md-3 {
+    color: #FFFFFF;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: "Bold";
+}
+
+.test {
+    background-color: #35013A;
+}
+
+.btn-premdark {
+    btn-hover-color: #FFFFFF;
+    btn-link-color: #FFFFFF;
+}
+
+.container-fluid {
+    background-color: #35013A;
+    float: center;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-brand {
+    float: center;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footers {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: "Light";
+    color: #FFFFFF;
+}

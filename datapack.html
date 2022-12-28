@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="presentation">
+        <div class="section-one">
+            <img src={{ imgOneFC }}> {{ nameOneFC }} vs. {{ nameTwoFC }} <img src={{ imgTwoFC }}>
+        </div>
+
+        <div class="first-meeting">
+            <br>
+            Meeting One:
+            <br>
+            {{ dateOne }}
+            <br>
+            {{ stadeOne}}
+            <br>
+            {{ homeFC }} {{ ft }} {{ awayFC }}
+            <br>
+            <br>
+            {% if goalscorers1|length >= goalscorers2|length %}
+                {% for goal in range(goalscorers1|length) %}
+                    {{ goalscorers1[goal] }}
+                    {{ minutes1[goal] }}
+                {% endfor %}
+                <br>
+                {% for goal in range(goalscorers2|length) %}
+                    {{ goalscorers2[goal] }}
+                    {{ minutes2[goal] }}
+                {% endfor %}
+            {% else %}
+                {% for goal in range(goalscorers2|length) %}
+                    {{ goalscorers2[goal] }}
+                    {{ minutes2[goal] }}
+                {% endfor %}
+                <br>
+                {% for goal in range(goalscorers1|length) %}
+                    {{ goalscorers1[goal] }}
+                    {{ minutes1[goal] }}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="second-meeting">
+            <br>
+            Meeting Two:
+            <br>
+            {{ dateTwo }}
+            <br>
+            {{ stadeTwo }}
+        </div>
+    </div>
+    <div class="stageTwo">
+        <div class="previousMeetings">
+            Previous Meetings:
+            <br>
+            {{ nameOneFC }}: {{ wins1 }} wins {{nameTwoFC}}: {{ wins2 }} wins Draws: {{ draws }}
+        </div>
+    Beware of {{ goalScorer1[0] }} and {{ goalScorer2[0] }}! They lead their teams with goals and have {{ goalScorer1[1] }} and {{ goalScorer2[1] }} goals respectively.
+    <br>
+    Assists may not be as treasured as goals, but they are crucial to any game. {{ topAssister1[0] }} and {{ topAssister2[0] }} are maestros at the passing game and lead their teams with {{ topAssister1[1] }} and {{ topAssister2[1] }} assists respectively.
+
+    {% if injuredPlayers1 is none %}
+        {{ nameOneFC }} are injury-free!
+    {% else %}
+        {{ nameOneFC }} will unfortunately miss
+        {% for injury in range(injuredPlayers1|length) %}
+            {{ injuredPlayers1[injury] }}
+        {% endfor %}
+        to injury.
+    {% endif %}
+    <br>
+    {% if injuredPlayers2 is none %}
+        {{ nameTwoFC }} are injury-free!
+    {% else %}
+        {{ nameTwoFC }} will also sadly miss
+        {% for injury in range(injuredPlayers2|length) %}
+            {{ injuredPlayers2[injury] }}
+        {% endfor %}
+        to injury.
+    {% endif %}
+</div>
+{% endblock %}
