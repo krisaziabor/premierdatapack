@@ -31,7 +31,7 @@ def obtainFixtureList():
         api_key = os.environ.get("API_KEY")
         payload={}
         headers = {}
-        url =f"https://soccer.sportmonks.com/api/v2.0/seasons/19734?api_token={api_key}&include=fixtures.events,fixtures.venue"
+        url =f"https://api.sportmonks.com/v3/football/seasons/19734?api_token={api_key}&include=fixtures.events,fixtures.venue"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -53,7 +53,7 @@ def compareClubs(one, two, amt):
         api_key = os.environ.get("API_KEY")
         payload={}
         headers={}
-        url=f"https://soccer.sportmonks.com/api/v2.0/head2head/{one}/{two}?api_token={api_key}"
+        url=f"https://api.sportmonks.com/v3/football/head2head/{one}/{two}?api_token={api_key}"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -118,7 +118,7 @@ def reverseClubSearch(inputs, ivalue, output):
             api_key = os.environ.get("API_KEY")
             payload = {}
             headers = {}
-            url = f"https://soccer.sportmonks.com/api/v2.0/teams/season/19734?api_token={api_key}&include=venue"
+            url = f"https://api.sportmonks.com/v3/football/teams/season/19734?api_token={api_key}&include=venue"
             response = requests.request("GET", url, headers=headers, data=payload)
             textresponse = response.text
             response.raise_for_status()
@@ -163,7 +163,7 @@ def obtainPremTeams(position):
         api_key = os.environ.get("API_KEY")
         payload = {}
         headers = {}
-        url = f"https://soccer.sportmonks.com/api/v2.0/teams/season/19734?api_token={api_key}&include=venue"
+        url = f"https://api.sportmonks.com/v3/football/teams/season/19734?api_token={api_key}&include=venue"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -190,7 +190,7 @@ def obtainTeamData(position):
         api_key = os.environ.get("API_KEY")
         payload={}
         headers = {}
-        url = f"https://soccer.sportmonks.com/api/v2.0/standings/season/19734?api_token={api_key}"
+        url = f"https://api.sportmonks.com/v3/football/standings/season/19734?api_token={api_key}"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -221,9 +221,12 @@ def obtainTeamData(position):
         return None
 
 def accurateIMG(position):
-    accurateID = int(obtainTeamData(position)['teamID'])
-    desiredIMG = reverseClubSearch("id", accurateID, "img")
-    return desiredIMG
+    if obtainTeamData(position) == None:
+        return None
+    else:
+        accurateID = int(obtainTeamData(position)['teamID'])
+        desiredIMG = reverseClubSearch("id", accurateID, "img")
+        return desiredIMG
 
 #start is 2005/06
 premYearID = [{'year':1586}, {'year':8}, {'year':14}, {'year':6}, {'year':11}, {'year':2}, {'year':9}, {'year':7}, {'year':3}, {'year':12}, {'year': 10}, {'year': 13}, {'year':6397}, {'year':12962}, {'year':16036}, {'year':17420}, {'year':18378}]
@@ -238,7 +241,7 @@ def findCommonYears(one, two):
             api_key = os.environ.get("API_KEY")
             payload={}
             headers={}
-            url = f"https://soccer.sportmonks.com/api/v2.0/standings/season/{premYearID[season]['year']}?api_token={api_key}"
+            url = f"https://api.sportmonks.com/v3/football/standings/season/{premYearID[season]['year']}?api_token={api_key}"
             response = requests.request("GET", url, headers=headers, data=payload)
             textresponse = response.text
             response.raise_for_status()
@@ -280,7 +283,7 @@ def teamLeagueHistory(one, two):
             api_key = os.environ.get("API_KEY")
             payload={}
             headers={}
-            url = f"https://soccer.sportmonks.com/api/v2.0/standings/season/{premYearID[season]['year']}?api_token={api_key}"
+            url = f"https://api.sportmonks.com/v3/football/standings/season/{premYearID[season]['year']}?api_token={api_key}"
             response = requests.request("GET", url, headers=headers, data=payload)
             textresponse = response.text
             response.raise_for_status()
@@ -348,7 +351,7 @@ def getNextTeamIMG(position):
         api_key = os.environ.get("API_KEY")
         payload={}
         headers={}
-        url = f"https://soccer.sportmonks.com/api/v2.0/teams/{position}?api_token={api_key}&include=upcoming"
+        url = f"https://api.sportmonks.com/v3/football/teams/{position}?api_token={api_key}&include=upcoming"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -379,7 +382,7 @@ def getPlayerName(id):
         api_key = os.environ.get("API_KEY")
         payload={}
         headers={}
-        url = f"https://soccer.sportmonks.com/api/v2.0/players/{id}?api_token={api_key}"
+        url = f"https://api.sportmonks.com/v3/football/players/{id}?api_token={api_key}"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -408,7 +411,7 @@ def playersUnavailable(team):
         api_key = os.environ.get("API_KEY")
         payload={}
         headers={}
-        url = f"https://soccer.sportmonks.com/api/v2.0/teams/{team}?api_token={api_key}&include=squad"
+        url = f"https://api.sportmonks.com/v3/football/teams/{team}?api_token={api_key}&include=squad"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -444,7 +447,7 @@ def topAssister(team):
         api_key = os.environ.get("API_KEY")
         payload={}
         headers={}
-        url = f"https://soccer.sportmonks.com/api/v2.0/teams/{team}?api_token={api_key}&include=squad"
+        url = f"https://api.sportmonks.com/v3/football/teams/{team}?api_token={api_key}&include=squad"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -474,7 +477,7 @@ def topGoalscorer(team):
         api_key = os.environ.get("API_KEY")
         payload={}
         headers={}
-        url = f"https://soccer.sportmonks.com/api/v2.0/teams/{team}?api_token={api_key}&include=squad"
+        url = f"https://api.sportmonks.com/v3/football/teams/{team}?api_token={api_key}&include=squad"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -499,5 +502,5 @@ def topGoalscorer(team):
         return "None2"
 
 
-print(playersUnavailable(6))
+#print(playersUnavailable(6))
 

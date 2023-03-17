@@ -408,7 +408,6 @@ def next4():
     flash("Due to frequent re-arranging of the Premier League schedule, some of the next matches are not fully accurate, as the API does not update frequently. Please reference premierleague.com for the most recent updates.")
     return render_template("nextteam.html", goalScorer1 = goalScorer1, goalScorer2 = goalScorer2, dateOne = fixlist[0]['time']['starting_at']['date_time'], dateTwo = fixlist[1]['time']['starting_at']['date_time'], nameOneFC = nameOneFC, nameTwoFC = nameTwoFC, imgOneFC = imgOneFC, imgTwoFC = imgTwoFC, stadeOne = fixlist[0]['venue']['data']['name'], stadeTwo = fixlist[1]['venue']['data']['name'], goalscorers1 = goalscorers1, goalscorers2 = goalscorers2, minutes1 = minutes1, minutes2 = minutes2, ft = ft, homeFC = homeFC, awayFC = awayFC, wins1 = wins1, draws = draws, wins2 = wins2, topAssister1 = topAssister1, topAssister2 = topAssister2, injuredPlayers1 = injuredPlayers1, injuredPlayers2 = injuredPlayers2)
 
-
 @app.route("/next5", methods=["GET", "POST"])
 def next5():
     oneFC = int(team5["teamID"])
