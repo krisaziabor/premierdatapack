@@ -31,7 +31,7 @@ def obtainFixtureList():
         api_key = os.environ.get("API_KEY")
         payload={}
         headers = {}
-        url =f"https://api.sportmonks.com/v3/football/seasons/19734?api_token={api_key}&include=fixtures.events,fixtures.venue"
+        url =f"https://api.sportmonks.com/v3/football/season/19734?api_token={api_key}&include=fixtures.events,fixtures.venue"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -163,7 +163,7 @@ def obtainPremTeams(position):
         api_key = os.environ.get("API_KEY")
         payload = {}
         headers = {}
-        url = f"https://api.sportmonks.com/v3/football/teams/season/19734?api_token={api_key}&include=venue"
+        url = f"https://api.sportmonks.com/v3/football/teams/seasons/19734?api_token={api_key}&include=venue"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
@@ -190,7 +190,7 @@ def obtainTeamData(position):
         api_key = os.environ.get("API_KEY")
         payload={}
         headers = {}
-        url = f"https://api.sportmonks.com/v3/football/standings/season/19734?api_token={api_key}"
+        url = f"https://api.sportmonks.com/v3/football/standings/seasons/19734?api_token={api_key}"
         response = requests.request("GET", url, headers=headers, data=payload)
         textresponse = response.text
         response.raise_for_status()
